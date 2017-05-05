@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+
+<h1>Page One</h1>
+  </div>
+    
+    
+  <div data-role="main" class="ui-content">
+      <h1> Daily Shopping List</h1>
+        <a href="#pagetwo" class="ui-btn">Sunday</a>
+        <a href="#pagetwo" class="ui-btn">Monday</a>
+        <a href="#pagetwo" class="ui-btn">Tuesday</a>
+        <a href="#pagetwo" class="ui-btn">Wednesday</a>
+        <a href="#pagetwo" class="ui-btn">Thursday</a>
+        <a href="#pagetwo" class="ui-btn">Friday</a>
+        <a href="#pagetwo" class="ui-btn">Sunday</a>
+        
+        
+        
+     </div>
+        
+    
+  <div data-role="footer">
+       <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="arrow-l" style="display:none"></a></li>
+        <li><a href="#toc" data-icon="bars"></a></li>
+        <li><a href="#pagetwo" data-icon="arrow-r"></a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+
+
+
+
+
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+  
+  
+<h1>Page Two</h1>
+  </div>
+    
+    <div data-role="main" class="ui-content">
+      <p>Page two content here</p>
+    
+    </div>
+    
+  <div data-role="footer">
+       <div data-role="navbar">
+      <ul>
+        <li><a href="#pageone" data-icon="arrow-l"></a></li>
+        <li><a href="#toc" data-icon="bars"></a></li>
+        <li><a href="#pagethree" data-icon="arrow-r"></a></li>
+        
+      
+      </ul>
+    </div>
+   </div>
+</div>
+
+<div data-role="page" id="pagethree">
+  <div data-role="header">
+<h1>Page Three</h1>
+
+  </div>
+    
+    <div data-role="main" class="ui-content">
+      <p>Page three content here</p>
+    
+    
+    </div>
+    
+  <div data-role="footer">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pagetwo" data-icon="arrow-l"></a></li>
+        <li><a href="#toc" data-icon="bars"></a></li>
+        <li><a href="#" data-icon="arrow-r" style=display:none></a></li>
+        
+
+      </ul>
+    </div>
+    
+   </div>
+</div>
+
+<div data-role="page" id="toc">
+  <div data-role="header">
+      <h1>Table of Contents</h1>
+  </div>
+    
+    <div data-role="main" class="ui-content">
+      <ul data-role="listview">
+          <li><a href="#pageone">Daily Shopping List</a></li>
+          <li><a href="#pagetwo">Page 2</a></li>
+          <li><a href="#pagethree">Page 3</a></li>
+        </ul>
+    
+    </div>
+    
+    
+  <div data-role="footer">
+      <p>TOC Footer</p>
+       
+      
+    
+   </div>
+</div>
+
+</body>
+</html>
+
+
+    
+        
+    
+    
