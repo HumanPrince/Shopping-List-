@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<style>
+<body {
+    background-color: lightblue;
+}
+</style> 
+
+
+<script>
+var chosenItems = {};
+
+
+function gotoQuantity(obj){
+
+  $.mobile.changePage("#quantity");
+  foodChosen = $(obj).text();
+  $("#foodname").text(foodChosen);
+}
+
+function ShowChosenItems(){
+
+  if ($("#spin").val()!="0")   saveChoice();
+  $.mobile.changePage("#finalShoppingList");
+  
+  output = "";
+  for (var key in chosenItems) {
+  
+   foodData = key + ":" + chosenItems[key];
+   $('<li>').append('<a href="#">' + foodData + '</a>').appendTo('#shoppingList');
+  
+  }
+  
+  
+
+}
+
+function backToList()
+{ 
+  saveChoice();
+  $.mobile.changePage("#pageone");
+  $("#spin").val(0);
+  
+}
+
+function saveChoice()
+{
+  foodChosen = $("#foodname").text();
+    quantityChosen = $("#spin").val();
+    chosenItems[foodChosen] = quantityChosen;
+    
+
+}
+    
+</script>
+
+<div data-role="page" id="pageup">
+  <div data-role="header">
+
+
+  </div>
+    
+    
+  <div data-role="main" class="ui-content">
+
+  
+
+      <h1> Daily Shopping List</h1>
+        <a href="#pageone" class="ui-btn">Sunday</a>
+        <a href="#pageone" class="ui-btn">Monday</a>
+        <a href="#pageone" class="ui-btn">Tuesday</a>
+        <a href="#pageone" class="ui-btn">Wednesday</a>
+        <a href="#pageone" class="ui-btn">Thursday</a>
+        <a href="#pageone" class="ui-btn">Friday</a>
+        <a href="#pageone" class="ui-btn">Saturday</a>
+        
+        
+        
+     </div>
+        
+    
+  <div data-role="footer">
+       <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="arrow-l" style="display:none"></a></li>
+        <li><a href="#pageone" data-icon="arrow-r"></a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+
+
+
+
+
+
+<div data-role="page" id="pageone">
+  <div data-role="main" class="ui-content">
+    <h2>Grocery Shopping List</h2>
+
+<div data-role="footer">
+       <div data-role="navbar">
+      <ul>
+        <li><a href="#pageup" data-icon="arrow-l"></a></li>
+        <li><a href="#" data-icon="arrow-r" style="display:none"></a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+
+    <form class="ui-filterable">
+      <input id="myFilter" data-type="search">
+    </form>
+    <ul data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+      <li><a onclick="gotoQuantity(this)">Apple</a></li>
+      <li><a onclick="gotoQuantity(this)">Appricot</a></li>
+      <li><a onclick="gotoQuantity(this)">Avocado</a></li>
+      <li><a onclick="gotoQuantity(this)">Blackberry</a></li>
+      <li><a onclick="gotoQuantity(this)">Blueberry</a></li>
+      <li><a onclick="gotoQuantity(this)">Beans</a></li>
+      <li><a onclick="gotoQuantity(this)">Bread</a></li>
+      <li><a onclick="gotoQuantity(this)">Banana</a></li>
+      <li><a onclick="gotoQuantity(this)">Carrot</a></li>
+      <li><a onclick="gotoQuantity(this)">Cashew</a></li>
+      <li><a onclick="gotoQuantity(this)">Cream</a></li>
+      <li><a onclick="gotoQuantity(this)">Grape</a></li>
+      <li><a onclick="gotoQuantity(this)">Guava</a></li>
+      <li><a onclick="gotoQuantity(this)">Mango</a></li>
+    </ul>
+  </div>
+</div> 
+
+  
+
+<div data-role="page" id="quantity">
+  <div data-role="main" class="ui-content">
+    <div id="foodname"></div>
+    <div class="ui-field-contain">
+      <label for="spin">Quantity</label>
+      <input type="text" data-role="spinbox" name="spin" id="spin" value="0" min="0" max="10" />
+    </div>
+    <button onclick="backToList()">Select More Items</button>
+    <button onclick="ShowChosenItems()">Display Selected Items</button>
+  </div>
+</div>
+
+<div data-role="page" id="finalShoppingList">
+  <div data-role="main" class="ui-content">
+    <div id="allFoodChosen">
+    <ul data-role="listview" data-inset="true" id="shoppingList">
+    </ul>
+    </div>
+  </div>
+
+   <div data-role="footer">
+       <div data-role="navbar">
+      <ul>
+        <li><a href="#pageup" data-icon="home"></a></li>
+        <li><a href="#" data-icon="arrow-r" style="display:none"></a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+    
+    
+    
+    
+    
+    </div>
+
+
+</body>
+</html>
+
+
+    
+        
+    
+    
